@@ -13,7 +13,7 @@ The SmartMed MVP integrates blockchain technology and federated identity to prov
   - Go-based chaincode designed for the Hyperledger Fabric blockchain platform.
 
 - **SmartMed Keycloak Plugin**
-  - A custom Keycloak extension that interfaces with the three supported blockchain platforms (Ethereum, Hyperledger Besu, and Hyperledger Fabric) for decentralized access control enforcement.
+  - A custom Keycloak extension that interfaces with the three supported blockchain platforms (Ethereum, Hyperledger Besu, and Hyperledger Fabric) for decentralized access control enforcement. (needs to be built and deployed to Keycloak and previously configured with the correct blockchain, see .env-example file)
 
 - **Protected Django Application**
   - A minimal Django web application that demonstrates authentication, authorization, and protected resource access through the SmartMed system.
