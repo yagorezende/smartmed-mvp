@@ -1,0 +1,75 @@
+{
+    "name": "test-network-org1",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "org1.example.com": {
+            "mspid": "Org1MSP",
+            "peers": [
+                "peer0.org1.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.org1.example.com"
+            ],
+            "users": {
+                "Admin": {
+                    "private_key": "/path/to/private/key",
+                    "cert": "/path/to/enrollmentCert.pem"
+                }
+            }
+        }
+    },
+    "orderers": {
+        "orderer.example.com": {
+            "url": "grpcs://localhost:7050",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICCjCCAbGgAwIBAgIUUOciZ0iPNZj1EvX311oeARoJB/kwCgYIKoZIzj0EAwIw\nYjELMAkGA1UEBhMCVVMxETAPBgNVBAgTCE5ldyBZb3JrMREwDwYDVQQHEwhOZXcg\nWW9yazEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1wbGUu\nY29tMB4XDTI1MDQyNjE3MTkwMFoXDTQwMDQyMjE3MTkwMFowYjELMAkGA1UEBhMC\nVVMxETAPBgNVBAgTCE5ldyBZb3JrMREwDwYDVQQHEwhOZXcgWW9yazEUMBIGA1UE\nChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1wbGUuY29tMFkwEwYHKoZI\nzj0CAQYIKoZIzj0DAQcDQgAEHGeD0RFT52+FBHyn4JqwpWfeHSygf8ToMGfRkSkB\nUZ5rbARvB3i55tmVIv6WaPGw2aPe37t9Q1vnJTXd+n1NlqNFMEMwDgYDVR0PAQH/\nBAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFP8pVCfbXlqS9ICT\nyAXJKWmzsvVAMAoGCCqGSM49BAMCA0cAMEQCIACMfYa8ZC3obe5rTS9LpXa8qz01\n7AbHZBVaHhFj7YoGAiBz0rkgmCjrYq6kqlzeXPk0LFX6gRBVijRLnJgEhgo/UQ==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.example.com",
+                "grpc-max-send-message-length": -1,
+                "hostnameOverride": "orderer.example.com"
+            }
+        }
+    },
+    "peers": {
+        "peer0.org1.example.com": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICJzCCAc2gAwIBAgIUBISdS0NymJBx7iKTeJcevWvB8PIwCgYIKoZIzj0EAwIw\ncDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH\nEwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh\nLm9yZzEuZXhhbXBsZS5jb20wHhcNMjUwNDI2MTcxOTAwWhcNNDAwNDIyMTcxOTAw\nWjBwMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExDzANBgNV\nBAcTBkR1cmhhbTEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMT\nY2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGfo\nTl10HOBTB7QM+ZfOvyDPJ45mr1kZDBFtesuCA7TPzoJp3OH9m7vWuJeZrSa2dQq9\nYUZ4neWDJQDsM22gnVCjRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG\nAQH/AgEBMB0GA1UdDgQWBBTYF4v+RJTIJG+oyJlo/TACa/d6zTAKBggqhkjOPQQD\nAgNIADBFAiEAufXG4avLn9f8XZ+HXRwrd9e6YW1JOIS/ViSDVN5wwx8CIG/bUU6h\nbcmH/DgivCw2Ln6aFTkuBktGp54d6T1iHE8q\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.org1.example.com",
+                "hostnameOverride": "peer0.org1.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.org1.example.com": {
+            "url": "https://localhost:7054",
+            "caName": "ca-org1",
+            "tlsCACerts": {
+                "pem": ["-----BEGIN CERTIFICATE-----\nMIICJzCCAc2gAwIBAgIUBISdS0NymJBx7iKTeJcevWvB8PIwCgYIKoZIzj0EAwIw\ncDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH\nEwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh\nLm9yZzEuZXhhbXBsZS5jb20wHhcNMjUwNDI2MTcxOTAwWhcNNDAwNDIyMTcxOTAw\nWjBwMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExDzANBgNV\nBAcTBkR1cmhhbTEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMT\nY2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGfo\nTl10HOBTB7QM+ZfOvyDPJ45mr1kZDBFtesuCA7TPzoJp3OH9m7vWuJeZrSa2dQq9\nYUZ4neWDJQDsM22gnVCjRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG\nAQH/AgEBMB0GA1UdDgQWBBTYF4v+RJTIJG+oyJlo/TACa/d6zTAKBggqhkjOPQQD\nAgNIADBFAiEAufXG4avLn9f8XZ+HXRwrd9e6YW1JOIS/ViSDVN5wwx8CIG/bUU6h\nbcmH/DgivCw2Ln6aFTkuBktGp54d6T1iHE8q\n-----END CERTIFICATE-----\n"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    },
+    "credentialStore": {
+        "path": "/tmp/fabric-client-kvs",
+        "cryptoStore": {
+            "path": "/tmp/fabric-client-kvs"
+        }
+    },
+    "path": "./store"
+}

@@ -1,0 +1,9 @@
+{
+  "policies": [
+    {
+      "name": "SmartMed Domain Policy",
+      "fileName": "policy.js",
+      "description": "SmartMed Domain Policy as JS file"
+    }
+  ]
+}
